@@ -1,0 +1,9 @@
+Package: linux-mount-auditor
+Version: 1.0.0-1
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: GuhsHosting <guhshosting@users.noreply.github.com>
+Homepage: https://github.com/guhshosting/linux-mount-auditor
+Description: read-only Linux mount configuration auditor
+ Inspects mountinfo and fstab without modifying system state.

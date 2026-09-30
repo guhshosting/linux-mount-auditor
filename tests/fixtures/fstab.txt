@@ -1,0 +1,7 @@
+# representative fixture
+/dev/sda1 / ext4 defaults 0 1
+/dev/sda2 /home ext4 ro 0 2
+/dev/sda1 /mnt/space none bind,noauto 0 0
+server:/share /mnt/nfs nfs4 nofail,_netdev 0 0
+UUID=missing /media/disk ext4 noauto,x-systemd.automount 0 2
+/swapfile none swap sw 0 0

@@ -1,0 +1,15 @@
+Source: linux-mount-auditor
+Section: utils
+Priority: optional
+Maintainer: GuhsHosting <guhshosting@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13), cmake, g++
+Standards-Version: 4.6.2
+Homepage: https://github.com/guhshosting/linux-mount-auditor
+Rules-Requires-Root: no
+
+Package: linux-mount-auditor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: read-only Linux mount configuration auditor
+ Inspect mountinfo and fstab safely, explain topology and propagation, and
+ compare current namespace state with persistent configuration.

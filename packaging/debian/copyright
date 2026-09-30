@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: linux-mount-auditor
+Source: https://github.com/guhshosting/linux-mount-auditor
+Files: *
+Copyright: 2026 GuhsHosting
+License: MIT
+ The complete license text is in /usr/share/common-licenses/MIT.

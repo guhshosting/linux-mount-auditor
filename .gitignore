@@ -1,0 +1,9 @@
+/build*/
+/*.deb
+/*.rpm
+/*.tar.gz
+*.o
+*.a
+*.gcda
+*.gcno
+.cache/

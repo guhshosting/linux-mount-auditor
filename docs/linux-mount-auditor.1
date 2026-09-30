@@ -1,0 +1,65 @@
+.TH LINUX-MOUNT-AUDITOR 1 "September 2026" "linux-mount-auditor 1.0.0" "User Commands"
+.SH NAME
+linux-mount-auditor \- inspect Linux mount configuration without changing it
+.SH SYNOPSIS
+.B linux-mount-auditor
+.I COMMAND
+.RI [ OPTIONS ]
+.RI [ TARGET ]
+.SH DESCRIPTION
+Parses /proc/self/mountinfo and optionally /etc/fstab. Results describe only the mount namespace visible to the process and are not an atomic snapshot. No mount, filesystem, device, service, swap, namespace, or configuration state is modified.
+.SH COMMANDS
+.TP
+.B inspect
+List current mounts.
+.TP
+.B tree
+Render the mount-ID hierarchy.
+.TP
+.BI show " TARGET"
+Show the longest lexical mount-point match. Symlinks are not resolved.
+.TP
+.B fstab
+Show persistent configuration records, including swap.
+.TP
+.B compare
+Conservatively compare fstab with current visible mounts.
+.TP
+.B audit
+Show contextual and review findings.
+.TP
+.B check
+As audit, but exit 1 when warning-level findings exist.
+.SH OPTIONS
+.TP
+.B --json
+Emit stable schema-version-1 JSON to stdout.
+.TP
+.B --all
+Include all mounts and bypass filters.
+.TP
+.B --include-pseudo
+Include pseudo and RAM-backed mounts.
+.TP
+.BI --type " TYPE"
+Filter by exact filesystem type.
+.TP
+.BI --source " SOURCE"
+Filter by exact source.
+.TP
+.BI --target " TARGET"
+Filter by exact target, or provide show's target.
+.TP
+.BI --fstab " PATH"
+Read an alternate fstab fixture read-only.
+.TP
+.BI --mountinfo " PATH"
+Read an alternate mountinfo fixture read-only.
+.SH EXIT STATUS
+0 success; 1 check finding or no show match; 2 usage; 3 required data unavailable; 4 malformed or partial data; 5 internal/resource error.
+.SH PRIVACY
+Output can reveal usernames, paths, container IDs, server/share names, and storage identifiers. No data is persisted or transmitted by the program.
+.SH SEE ALSO
+.BR fstab (5),
+.BR proc (5),
+.BR mount_namespaces (7)

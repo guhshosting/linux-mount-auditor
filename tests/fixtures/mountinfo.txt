@@ -1,0 +1,8 @@
+24 1 8:1 / / rw,relatime shared:1 - ext4 /dev/sda1 rw,errors=remount-ro
+25 24 0:5 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw
+26 24 0:42 / /run rw,nosuid,nodev - tmpfs tmpfs rw,size=100m
+27 24 8:2 / /home ro,relatime master:1 propagate_from:2 - ext4 /dev/sda2 ro
+28 24 0:55 / /srv/container rw,relatime shared:7 master:2 - overlay overlay rw,lowerdir=/a,upperdir=/b
+29 24 0:56 /sub\040dir /mnt/space rw,bind unbindable future:thing - ext4 /dev/sda1 rw
+30 24 0:57 / /mnt/nfs rw,relatime - nfs4 server:/share rw
+31 24 0:58 / /mnt/fuse rw,relatime - fuse.sshfs user@host:/ rw
